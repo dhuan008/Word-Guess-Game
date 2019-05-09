@@ -1,3 +1,11 @@
+html {
+    /* Positioning */
+    position: relative;
+  
+    /* Box-model */
+    min-height: 100%;
+}  
+
 body {
     background: url(../images/body-background.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -7,9 +15,17 @@ body {
 }
 
 .bg-header {
-    background-image: url(../images/Game-of-Thrones-opening-sequence-image-header.jpg);
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-image: url(../images/header-background.png);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: bottom right;
+}
+
+.jumbotron h1 {
+    font-family: "Roboto Mono";
+}
+
+.jumbotron p {
+    font-family: "Roboto Slab";
 }
