@@ -1,0 +1,15 @@
+body {
+    background: url(../images/body-background.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.bg-header {
+    background-image: url(../images/Game-of-Thrones-opening-sequence-image-header.jpg);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
