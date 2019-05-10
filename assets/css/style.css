@@ -22,10 +22,18 @@ body {
     background-position: bottom right;
 }
 
-.jumbotron h1 {
+.font-mono {
     font-family: "Roboto Mono";
 }
 
-.jumbotron p {
+.font-slab {
     font-family: "Roboto Slab";
+}
+
+.bg-black {
+    background-color: black;
+}
+
+.text-bgreen {
+    color: rgb(22, 198, 12);
 }
