@@ -37,3 +37,7 @@ body {
 .text-bgreen {
     color: rgb(22, 198, 12);
 }
+
+#toShow {
+    display: none;
+}

@@ -89,6 +89,15 @@ var wordGuessGame = {
         this.updateCurrentWord();
         this.writeNumGuesses();
         this.updateLettersGuessed();
+        this.displayAnswer();
+    },
+
+    displayAnswer: function () {
+        if (this.winGame()) {
+            this.writeAnswer();
+            var x = document.getElementById("toShow");
+            x.style.display = 'block';
+        }
     },
 
     // Updates the current word guesses and calls write
@@ -137,6 +146,11 @@ var wordGuessGame = {
         document.getElementById("score").textContent = this.wins;
     },
 
+    // Writes the answer to the html page
+    writeAnswer: function () {
+        document.getElementById("answer").textContent = this.answerChars.join("");
+    },
+
     // Reduces the number of guesses remaining by one
     decrementGuesses: function () {
         this.guesses--;
@@ -147,8 +161,9 @@ var wordGuessGame = {
         this.wins++;
     }
 
-
 };
+
+
 
 // Page loaded main function
 document.addEventListener("DOMContentLoaded", function (event) {
