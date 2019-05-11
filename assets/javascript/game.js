@@ -26,6 +26,7 @@ var wordGuessGame = {
         this.guesses = 12;
     },
 
+    // Checks if game ended
     checkEndGame: function () {
         if (this.loseGame()) {
             this.restartGame();
@@ -37,11 +38,13 @@ var wordGuessGame = {
         console.log(this.playerInput);
     },
 
+    // Restarts the game
     restartGame: function () {
         this.resetEndGame();
         this.gameStart();
     },
 
+    // Checks if lost game by running out of guesses
     loseGame: function () {
         if (this.guesses == 0) {
             return true;
@@ -88,20 +91,30 @@ var wordGuessGame = {
         this.updateLettersGuessed();
     },
 
-    // Updates the current word guesses
+    // Updates the current word guesses and calls write
     updateCurrentWord: function () {
         for (var i = 0; i < this.answerChars.length; i++) {
             if (this.answerChars[i] == this.playerInput) {
                 this.displayChars[i] = this.playerInput;
-                //console.log(this.displayChars);
             }
         }
         this.writeCurrentWord();
     },
 
+    // Adds player input to already guessed array and calls the write
     updateLettersGuessed: function () {
         this.alreadyGuessed.push(this.playerInput);
         this.writeAlreadyGuessed();
+    },
+
+    // Checks if letter has already been guessed
+    letterGuessed: function () {
+        for (var i = 0; i < this.alreadyGuessed.length; i++) {
+            if (this.playerInput == this.alreadyGuessed[i]) {
+                return true;
+            }
+        }
+        return false;
     },
 
     // Changes the html page for current word
@@ -151,12 +164,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
             // Set player input equal to the lowercase input
             wordGuessGame.playerInput = event.key.toLowerCase();
-            wordGuessGame.decrementGuesses();
 
-            wordGuessGame.updateDisplay();
-            wordGuessGame.checkEndGame();
+            // Checks if letter has been guessed if it hasn't then decrement, update, and check endgame conditions
+            if (!wordGuessGame.letterGuessed()) {
+                wordGuessGame.decrementGuesses();
+                wordGuessGame.updateDisplay();
+                wordGuessGame.checkEndGame();
+            }
+
         }
-
 
     }
 });
