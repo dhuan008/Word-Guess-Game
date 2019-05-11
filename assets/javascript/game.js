@@ -4,7 +4,7 @@ var wordGuessGame = {
     wordList: ["javascript", "functions", "float", "arrays", "strings"],
     answerChars: [],
     displayChars: [],
-    wrongGuesses: [],
+    alreadyGuessed: [],
     playerInput: "",
     wins: 0,
     guesses: 12,
@@ -14,18 +14,49 @@ var wordGuessGame = {
         this.getWord();
         this.initGuesses();
         this.writeWins();
-        this.writeNumGuesses();
+        this.updateDisplay();
     },
 
+    // Resets variables for next game
     resetEndGame: function () {
         this.answerChars.length = 0;
         this.displayChars.length = 0;
-        this.wrongGuesses.length = 0;
+        this.alreadyGuessed.length = 0;
         this.playerinput = "";
         this.guesses = 12;
     },
 
-    // Gets the answer and stores each character into the aanswerChars array
+    checkEndGame: function () {
+        if (this.loseGame()) {
+            this.restartGame();
+        }
+        else if (this.winGame()) {
+            this.incrementWins();
+            this.restartGame();
+        }
+    },
+
+    restartGame: function () {
+        this.resetEndGame();
+        this.gameStart();
+    },
+
+    loseGame: function () {
+        if (this.guesses == 0) {
+            return true;
+        }
+        return false;
+    },
+
+    // Checks if you won by comparing arrays turned into strings
+    winGame: function () {
+        if (this.displayChars.toString() == this.answerChars.toString()) {
+            return true;
+        }
+        return false;
+    },
+
+    // Gets the answer and stores each character into the answerChars array
     getWord: function () {
         this.answerChars = (this.wordList[Math.floor(Math.random() * this.wordList.length)]).split("");
     },
@@ -53,7 +84,7 @@ var wordGuessGame = {
     updateDisplay: function () {
         this.updateCurrentWord();
         this.writeNumGuesses();
-        //this.writeAlreadyGuessed();
+        this.updateLettersGuessed();
     },
 
     // Updates the current word guesses
@@ -65,6 +96,11 @@ var wordGuessGame = {
             }
         }
         this.writeCurrentWord();
+    },
+
+    updateLettersGuessed: function () {
+        this.alreadyGuessed.push(this.playerInput);
+        this.writeAlreadyGuessed();
     },
 
     // Changes the html page for current word
@@ -79,7 +115,7 @@ var wordGuessGame = {
 
     // Changes the html page for letters already guessed
     writeAlreadyGuessed: function () {
-        document.getElementById("alreadyGuesses").textContent = this.wrongGuesses.join(" ");
+        document.getElementById("alreadyGuessed").textContent = this.alreadyGuessed.join(" ");
     },
 
     // Changes the html page for number of wins
@@ -116,18 +152,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
             wordGuessGame.playerInput = event.key.toLowerCase();
             wordGuessGame.decrementGuesses();
 
-            //console.log(wordGuessGame.playerInput);
-
-            //console.log(wordGuessGame.answerChars);
-
-            //console.log(wordGuessGame.checkLetter(wordGuessGame.playerInput));
-            /*
-                        // If player guessed correctly
-                        if (wordGuessGame.checkLetter(wordGuessGame.playerInput)) {
-                            
-                        }
-            */
             wordGuessGame.updateDisplay();
+            wordGuessGame.checkEndGame();
         }
 
 
