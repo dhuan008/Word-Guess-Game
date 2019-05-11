@@ -22,7 +22,7 @@ var wordGuessGame = {
         this.answerChars.length = 0;
         this.displayChars.length = 0;
         this.alreadyGuessed.length = 0;
-        this.playerinput = "";
+        this.playerInput = "";
         this.guesses = 12;
     },
 
@@ -34,6 +34,7 @@ var wordGuessGame = {
             this.incrementWins();
             this.restartGame();
         }
+        console.log(this.playerInput);
     },
 
     restartGame: function () {
