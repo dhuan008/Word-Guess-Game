@@ -8,6 +8,7 @@ var wordGuessGame = {
     playerInput: "",
     wins: 0,
     guesses: 12,
+    music: "",
 
     // Initializes game
     gameStart: function () {
@@ -32,6 +33,8 @@ var wordGuessGame = {
             this.restartGame();
         }
         else if (this.winGame()) {
+            this.playMusic();
+            //
             this.incrementWins();
             this.restartGame();
         }
@@ -161,9 +164,37 @@ var wordGuessGame = {
         this.wins++;
     },
 
-    audio: function () {
-        //
-    } 
+    // Selects and plays music
+    playMusic: function () {
+        //starwars 
+        if (this.answerChars.join("") == this.wordList[0]) {
+            this.music = document.getElementById("starwars");
+            this.music.play();
+        }
+        //jamesbond
+        else if (this.answerChars.join("") == this.wordList[1]) {
+            this.music = document.getElementById("jamesbond");
+            this.music.play();
+        }
+        //westworld
+        else if (this.answerChars.join("") == this.wordList[2]) {
+            this.music = document.getElementById("westworld");
+            this.music.play();
+        }
+        //rocky
+        else if (this.answerChars.join("") == this.wordList[3]) {
+            this.music = document.getElementById("rocky");
+            this.music.play();
+        }
+        //batman
+        else if (this.answerChars.join("") == this.wordList[4]) {
+            this.music = document.getElementById("batman");
+            this.music.play();
+        }
+        else {
+            console.log("Error with music");
+        }
+    }
 
 };
 
@@ -180,7 +211,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         // If a letter is typed
         if (event.keyCode >= 65 && event.keyCode <= 90) {
-
+            
             // Set player input equal to the lowercase input
             wordGuessGame.playerInput = event.key.toLowerCase();
 
