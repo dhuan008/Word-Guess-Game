@@ -170,26 +170,31 @@ var wordGuessGame = {
         if (this.answerChars.join("") == this.wordList[0]) {
             this.music = document.getElementById("starwars");
             this.music.play();
+            document.body.style.backgroundImage = "url(./assets/images/starwars-bg.jpg)";
         }
         //jamesbond
         else if (this.answerChars.join("") == this.wordList[1]) {
             this.music = document.getElementById("jamesbond");
             this.music.play();
+            document.body.style.backgroundImage = "url(./assets/images/jamesbond-bg.jpg)";
         }
         //westworld
         else if (this.answerChars.join("") == this.wordList[2]) {
             this.music = document.getElementById("westworld");
             this.music.play();
+            document.body.style.backgroundImage = "url(./assets/images/westworld-bg.jpg)";
         }
         //rocky
         else if (this.answerChars.join("") == this.wordList[3]) {
             this.music = document.getElementById("rocky");
             this.music.play();
+            document.body.style.backgroundImage = "url(./assets/images/rocky-bg.jpg)";
         }
         //batman
         else if (this.answerChars.join("") == this.wordList[4]) {
             this.music = document.getElementById("batman");
             this.music.play();
+            document.body.style.backgroundImage = "url(./assets/images/batman-bg.jpg)";
         }
         else {
             console.log("Error with music");
@@ -200,6 +205,7 @@ var wordGuessGame = {
     pauseMusic: function () {
         if( this.music !== "") {
             this.music.pause();
+            document.body.style.backgroundImage = "url(./assets/images/hollywood-sign-bg.jpg)";
         }
     }
 
