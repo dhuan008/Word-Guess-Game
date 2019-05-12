@@ -194,6 +194,13 @@ var wordGuessGame = {
         else {
             console.log("Error with music");
         }
+    },
+
+    // Stops the music
+    pauseMusic: function () {
+        if( this.music !== "") {
+            this.music.pause();
+        }
     }
 
 };
@@ -208,6 +215,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     // On key press up
     document.onkeyup = function (event) {
+
+        // Stops music on next game
+        wordGuessGame.pauseMusic();
 
         // If a letter is typed
         if (event.keyCode >= 65 && event.keyCode <= 90) {
