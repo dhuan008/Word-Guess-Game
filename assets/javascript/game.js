@@ -164,7 +164,7 @@ var wordGuessGame = {
         this.wins++;
     },
 
-    // Selects and plays music
+    // Selects and plays music and changes background image. I dont feel like seperating out functions cause it's late
     playMusic: function () {
         //starwars 
         if (this.answerChars.join("") == this.wordList[0]) {
@@ -201,12 +201,17 @@ var wordGuessGame = {
         }
     },
 
-    // Stops the music
+    // Stops the music and calles reset bg image
     pauseMusic: function () {
         if( this.music !== "") {
             this.music.pause();
-            document.body.style.backgroundImage = "url(./assets/images/hollywood-sign-bg.jpg)";
+            this.resetImage();
         }
+    },
+
+    // rests the background image
+    resetImage: function () {
+        document.body.style.backgroundImage = "url(./assets/images/hollywood-sign-bg.jpg)";
     }
 
 };
