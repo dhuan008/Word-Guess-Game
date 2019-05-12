@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Word Guess Game</title>
-
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:700" rel="stylesheet">
+    <!-- Linked fonts -->
     <link href="https://fonts.googleapis.com/css?family=Limelight" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Stylish" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <!-- Bootstrap CSS -->
@@ -18,6 +18,7 @@
 
 <body>
 
+    <!-- Header -->
     <header>
         <div class="container">
             <div class="row justify-content-center">
@@ -40,17 +41,17 @@
         </div>
 
         <!-- Display game mechanics-->
-        <div class="row justify-content-center mx-5 bg-opaque-dark text-white font-mono">
-            <div class="col-12 col-xl-5 px-3 py-3 text-center">
-                <h3 class="mb-4">Press Any Key to Get Started!</h3>
-                <h3>Wins</h3>
-                <h2 class="mb-4" id="score"></h2>
-                <h3>Current Word</h3>
-                <h3 class="mb-4" id="cWord"></h3>
-                <h3>Number of Guesses Remaining</h3>
-                <h2 class="mb-4" id="numGuesses"></h2>
-                <h3>Letters Already Guessed</h3>
-                <h4 class="mb-5" id="alreadyGuessed"></h4>
+        <div class="row justify-content-center mx-5 bg-opaque-dark text-white font-stylish">
+            <div class="col-12 col-xl-8 px-3 py-3 text-center">
+                <h2 class="mb-4">Press Any Key to Get Started!</h2>
+                <h2>Wins</h2>
+                <h1 class="mb-4" id="score"></h1>
+                <h2>Current Word</h2>
+                <h1 class="mb-4" id="cWord"></h1>
+                <h2>Number of Guesses Remaining</h2>
+                <h1 class="mb-4" id="numGuesses"></h1>
+                <h2>Letters Already Guessed</h2>
+                <h2 class="mb-5" id="alreadyGuessed"></h2>
             </div>
         </div>
     </div>
@@ -74,7 +75,7 @@
         </audio>
     </div>
 
-
+    <!-- Link Javascript-->
     <script src="assets/javascript/game.js"></script>
 </body>
 
