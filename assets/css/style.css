@@ -7,35 +7,43 @@ html {
 }  
 
 body {
-    background: url(../images/body-background.jpg) no-repeat center center fixed;
+    background: url(../images/hollywood-sign-bg.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 }
 
-.bg-header {
-    background-image: url(../images/header-background.png);
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-position: bottom right;
+.jumbotron {
+    padding-bottom: 10px;
+}
+
+.bg-opaque {
+    background: rgba(250, 248, 239, 0);
+    /*background-color:rgba(204, 204, 204, 0.5);*/
+}
+
+.bg-opaque-dark {
+    background: rgba(33, 33, 33, 0.5);
+}
+
+.neon {
+    color: #D0F8FF;
+    text-shadow: 0 0 5px #A5F1FF, 0 0 10px #A5F1FF,
+             0 0 20px #A5F1FF, 0 0 30px #A5F1FF,
+             0 0 40px #A5F1FF;
+}
+
+.font-limelight {
+    font-family: 'Limelight', cursive;
 }
 
 .font-mono {
     font-family: "Roboto Mono";
 }
 
-.font-slab {
-    font-family: "Roboto Slab";
-}
-
 .bg-black {
     background-color: black;
-}
-
-.text-bgreen {
-    color: rgb(22, 198, 12);
 }
 
 #toShow {

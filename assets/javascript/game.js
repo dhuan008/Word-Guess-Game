@@ -1,7 +1,7 @@
 // Game object
 var wordGuessGame = {
     // Variables
-    wordList: ["javascript", "functions", "float", "arrays", "strings"],
+    wordList: ["starwars", "jamesbond", "westworld", "rocky", "batman"],
     answerChars: [],
     displayChars: [],
     alreadyGuessed: [],
@@ -148,7 +148,7 @@ var wordGuessGame = {
 
     // Writes the answer to the html page
     writeAnswer: function () {
-        document.getElementById("answer").textContent = this.answerChars.join("");
+        document.getElementById("answer").textContent = this.answerChars.join("").toUpperCase();
     },
 
     // Reduces the number of guesses remaining by one
@@ -159,7 +159,11 @@ var wordGuessGame = {
     // Adds the number of wins by one
     incrementWins: function () {
         this.wins++;
-    }
+    },
+
+    audio: function () {
+        //
+    } 
 
 };
 

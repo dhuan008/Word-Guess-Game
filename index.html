@@ -7,7 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Word Guess Game</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:700|Roboto+Slab:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Limelight" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <!-- Bootstrap CSS -->
@@ -21,9 +22,9 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 col-xl-10">
-                    <div class="jumbotron jumbotron-fluid text-center bg-header mx-1 rounded border border-light">
-                        <h1 class="display-4 text-bgreen font-mono">Word Guess Game</h1>
-                        <p class="lead text-bgreen font-italic font-slab">Programming</p>
+                    <div class="jumbotron jumbotron-fluid text-center font-limelight bg-opaque mx-1">
+                        <h1 class="display-4 neon">Word Guess Game</h1>
+                        <p class="lead font-italic neon">Famous Movies</p>
                     </div>
                 </div>
             </div>
@@ -32,18 +33,18 @@
 
     <div class="container">
         <!-- Display Correct word and/or song -->
-        <div class="row justify-content-center mx-5 bg-black rounded border border-light" id="toShow">
-            <div class="col-12 col-xl-10">
-                <h1 class="text-center text-bgreen" id="answer">Testing</h1>
+        <div class="row justify-content-center mx-5 bg-opaque-dark neon font-limelight" id="toShow">
+            <div class="col-12">
+                <h1 class="text-center mb-5" id="answer"></h1>
             </div>
         </div>
 
         <!-- Display image and game mechanics-->
-        <div class="row justify-content-center mx-5">
-            <div class="col-6 col-xl-5 bg-black rounded border border-light">
-                <img src="assets/images/body-background.jpg" class="img-fluid rounded px-5 py-4 d-block">
+        <div class="row justify-content-center mx-5 bg-opaque-dark text-white font-mono">
+            <div class="col-6 col-xl-5">
+                <img src="assets/images/body-background.jpg" class="img-fluid border border-light rounded my-3" id="answerImg">
             </div>
-            <div class="col-6 col-xl-5 bg-black rounded border border-light px-3 py-3 font-mono text-center text-bgreen">
+            <div class="col-6 col-xl-5 px-3 py-3 text-center">
                 <h3 class="mb-4">Press Any Key to Get Started!</h3>
                 <h3>Wins</h3>
                 <h2 class="mb-4" id="score"></h2>
