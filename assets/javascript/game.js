@@ -38,7 +38,7 @@ var wordGuessGame = {
             this.incrementWins();
             this.restartGame();
         }
-        console.log(this.playerInput);
+        //console.log(this.playerInput);
     },
 
     // Restarts the game

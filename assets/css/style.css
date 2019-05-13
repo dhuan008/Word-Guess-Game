@@ -14,6 +14,11 @@ body {
     background-size: cover;
 }
 
+h1, h2 {
+    line-height: 1;
+    margin-bottom: .1rem;
+}
+
 .jumbotron {
     padding-bottom: 10px;
 }
